@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="header__container">
+            <nav class="header__nav">
+                <img src="" alt="">
+                <ul class="header__list">
+                    <li class="header__list-item">
+                        <a class="header__list-link" href="#info">Информация</a>
+                    </li>
+                    <li class="header__list-item">
+                        <a class="header__list-link" href="#hero">Замки</a>
+                    </li>
+                    <li class="header__list-item">
+                        <a class="header__list-link" href="#features">Памятники</a>
+                    </li>
+                    <li class="header__list-item">
+                        <a class="header__list-link" href="#features-sub">Центры</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section class="info" id="info">
+            <div class="info__container">
+                <div class="info__content">
+                    <div class="info__text">
+                        <p class="info__desc">
+                            Добро пожаловать в удивительное путешествие по культурному наследию Республики Беларусь! Наш край — это место, где переплетаются эпохи, оживают древние легенды и хранится память о великих событиях. Здесь суровая готика и барокко суровых средневековых замков хранят тайны княжеских династий, а современные музеи и театры открывают двери в мир высокого искусства, эстетики и вдохновения.   Памятники и мемориалы Беларуси рассказывают о многогранности её истории: от гордости за просветителей и родной язык до глубокой памяти о героизме и подвиге народа. Здесь каждый найдет что-то свое — будь то атмосфера рыцарских времен, вдохновение для учебы и творчества или важный урок истории. Отправляйтесь в виртуальный тур по главным достопримечательностям страны, откройте для себя их уникальную красоту и прикоснитесь к живому наследию Беларуси!
+                        </p>
+                    </div>
+                    <div class="info__buttons">
+                        <a class="info__scroll" href="#hero">
+                            <img class="info__scroll-img" src="images/arrow-down.svg" alt="">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="hero" id="hero">
+            <div class="hero__container">
+                <div class="hero__content">
+                    <div class="hero__text">
+                        <h2 class="hero__title">
+                            Замки на территории Беларуси
+                        </h2>
+                    </div>
+                    <div class="hero__buttons">
+                        <a class="hero__button" href="index2.html">Подробнее</a>
+                    </div>
+                <img class="hero__img" src="images/ЗАМКИ/Castle1.jpg" alt="" width="280" height="190">
+                <img class="hero__img-t" src="images/ЗАМКИ/Castle2.jpg" alt="" width="280" height="190">
+                <img class="hero__img-th" src="images/ЗАМКИ/Castle3.jpg" alt="" width="280" height="190">    
+                </div>
+            </div>
+        </section>
+        <section class="features" id="features">
+            <div class="features__container">
+                <div class="feature">
+                    <img class="feature__image" src="images/ПАМЯТНИКИ/Скорина.jpg" alt="" width="220" height="280">
+                    <img class="feature__image-t" src="images/ПАМЯТНИКИ/У нескладовая.jpg" alt="" width="220" height="280">
+                    <img class="feature__image-th" src="images/ПАМЯТНИКИ/хатынь.jpg" alt="" width="220" height="280">
+                    <div class="feature__content">
+                        <div class="feature__text">
+                            <h2 class="feauture__title">
+                                Памятники на территории Беларуси
+                            </h2>
+                        </div>
+                        <div class="feauture__buttons">
+                        <a class="feature__button" href="index3.html">Подробнее</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="features-sub" id="features-sub">
+            <div class="feature-sub__container">
+                    <div class="feature-sub__content">
+                        <div class="feature-sub__text">
+                            <h2 class="feauture-sub__title">
+                                Центры культуры на территории Беларуси
+                            </h2>
+                        </div>
+                        <div class="feauture-sub__buttons">
+                        <a class="feature-sub__button" href="index4.html">Подробнее</a>
+                        </div>
+                    </div>
+                    <img class="feature-sub__image" src="images/КУЛЬТУРНЫЕ ЗАВЕДЕНИЯ/teatr-opery-i-baleta.jpg" alt="" width="280" height="200">
+                    <img class="feature-sub__image-t" src="images/КУЛЬТУРНЫЕ ЗАВЕДЕНИЯ/музей вов.jpg" alt="" width="280" height="200">
+                    <img class="feature-sub__image-th" src="images/КУЛЬТУРНЫЕ ЗАВЕДЕНИЯ/Худ музей.jpg" alt="" width="280" height="200">
+                </div>
+        </section>
+    </main>
+    <script>
+        const navLinks = document.querySelectorAll(
+            ".header__list-link"
+        );
+
+        const sections = document.querySelectorAll(
+            "main section[id]"
+        );
+
+        function updateActiveLink() {
+            if (sections.length === 0) return;
+
+            const marker = window.innerHeight * 0.35;
+
+            let currentId = sections[0].id;
+
+            sections.forEach(section => {
+                if (section.getBoundingClientRect().top <= marker) {
+                currentId = section.id;
+                }
+            });
+
+            if (
+                window.innerHeight + window.scrollY >=
+                document.documentElement.scrollHeight - 2
+            ) {
+                currentId = sections[sections.length - 1].id;
+            }
+
+            navLinks.forEach(link => {
+                const isActive =
+                    link.getAttribute("href") === "#" + currentId;
+
+                link.classList.toggle("active", isActive);
+            });
+        }
+
+
+        window.addEventListener("scroll", updateActiveLink, {
+            passive: true
+        });
+
+        window.addEventListener("resize", updateActiveLink);
+
+        updateActiveLink();
+    </script>
+</body>
+</html>
